@@ -3,7 +3,7 @@ description: "Послідовно створити, зібрати, проте�
 agent: "build-engineer"
 ---
 
-# init
+# init-agent
 
 ## Призначення
 

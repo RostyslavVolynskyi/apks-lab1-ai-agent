@@ -25,7 +25,7 @@ FAIL для кожної перевірки та загальний резуль
 2. Знайди кожен skill build-engineer та перевір, що він має розділи
    призначення, входів/передумов, виходів/очікуваних файлів і перевірок.
 3. Перевір наявність усіх командних prompt-файлів: `git-init`,
-   `create-project`, `create-build`, `create-actions`, `check`, `init`.
+   `create-project`, `create-build`, `create-actions`, `check`, `init-agent`.
 4. Перевір структуру проєкту: `src/`, `tests/`, `docs/`, `src/hello.ts`,
    `src/math.ts`, `tests/math.test.ts`, `README.md`, `.gitignore`,
    `package.json`, `tsconfig.json`, `vitest.config.ts`, `ci.sh`, `ci.bat`,
@@ -41,7 +41,7 @@ FAIL для кожної перевірки та загальний резуль
    Перевір, що Windows-крок має `shell: cmd`.
 8. Перевір, що `.gitignore` містить рівно по одному запису для кожного з:
    `node_modules/`, `dist/`, `build/`, `.env`, `*.log`, `logs/`.
-9. Перевір, що `.github/prompts/init.prompt.md` містить кроки в порядку:
+9. Перевір, що `.github/prompts/init-agent.prompt.md` містить кроки в порядку:
    `git-init`, `create-project`, `create-build`, `create-actions`, `check`.
 10. Прочитай `git ls-files` і перевір, що tracked-файли не містять
     `node_modules/`, `dist/`, `build/` або секретів/токенів.
@@ -66,7 +66,7 @@ FAIL для кожної перевірки та загальний резуль
 .github/prompts/create-build.prompt.md
 .github/prompts/create-actions.prompt.md
 .github/prompts/check.prompt.md
-.github/prompts/init.prompt.md
+.github/prompts/init-agent.prompt.md
 ci.sh
 ci.bat
 .gitattributes
@@ -101,7 +101,8 @@ npm start
 Також дозволені read-only перевірки вмісту файлів і YAML. Не запускай
 `npm install`, якщо це змінює lock-файл або створює залежності; перевіряй
 наявні залежності без модифікації проєкту. Перевір також `.gitignore`,
-`.gitattributes`, структуру workflow та порядок кроків у `init.prompt.md`.
+`.gitattributes`, структуру workflow та порядок кроків у
+`init-agent.prompt.md`.
 
 ## Повідомлення про помилку
 
@@ -113,7 +114,7 @@ npm start
 - На кроці 6: `ПОМИЛКА КРОКУ 6: команда <команда> завершилася з помилкою.`
 - На кроці 7: `ПОМИЛКА КРОКУ 7: workflow невалідний, має зайві npm-команди або не містить потрібної ОС/shell.`
 - На кроці 8: `ПОМИЛКА КРОКУ 8: .gitignore неповний або містить дублікати записів.`
-- На кроці 9: `ПОМИЛКА КРОКУ 9: init.prompt.md має неправильний порядок кроків.`
+- На кроці 9: `ПОМИЛКА КРОКУ 9: init-agent.prompt.md має неправильний порядок кроків.`
 - На кроці 10: `ПОМИЛКА КРОКУ 10: у Git знайдено артефакт або секрет.`
 
 Для кожної помилки наведи фактичний шлях, команду або діагностику. Не
