@@ -10,3 +10,15 @@
 
 ## Запуск агента
 (буде заповнено після створення агента)
+
+## Проєкт Hello World
+
+Назва проєкту: `apks-lab1-hello`
+
+Після налаштування npm scripts skill `build-and-test` команда запуску:
+
+```text
+npm start
+```
+
+виводить `Hello World`.
